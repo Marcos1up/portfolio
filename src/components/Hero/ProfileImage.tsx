@@ -1,5 +1,7 @@
 import { Box, Image } from "@chakra-ui/react";
 
+import profilePic from "../../assets/profile.webp";
+
 const ProfileImage = () => {
   return (
     <Box
@@ -23,7 +25,7 @@ const ProfileImage = () => {
       />
 
       <Image
-        src="../../../dist/assets/marcos.webp"
+        src={profilePic}
         alt="Marcos Soria"
         borderRadius="2xl"
         objectFit="cover"

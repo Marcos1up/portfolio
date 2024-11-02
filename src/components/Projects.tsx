@@ -11,6 +11,9 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { Code, ExternalLink } from "lucide-react";
+import image404 from "../assets/image-404.webp";
+import boostup from "../assets/boostup.webp";
+import heladitosApp from "../assets/heladitos-app.webp";
 
 interface ProjectCard {
   title: string;
@@ -26,7 +29,7 @@ const projects: ProjectCard[] = [
     description:
       "BOOSTUP es una plataforma de financiamiento colectivo que conecta proyectos StartUp emergentes con inversores interesados en innovación y sostenibilidad.",
     tags: ["React", "Next.js", "Node.js", "MongoDb"],
-    image: "../../dist/assets/boostup-image.webp",
+    image: boostup,
     url: "https://github.com/No-Country-simulation/c21-21-m-node-react",
   },
   {
@@ -34,7 +37,7 @@ const projects: ProjectCard[] = [
     description:
       "Desarrollo freelancer de una página de catálogo menú, para un negocio local de comida rápida. Muestra productos destacados, ofertas, favoritos, si se encuentra abierto o cerrado y un mapa de la dirección del local.",
     tags: ["React", "Next.js", "Tailwind"],
-    image: "../../dist/assets/image-404.webp",
+    image: image404,
     url: "https://github.com/Marcos1up/AlPaso-App",
   },
   {
@@ -42,7 +45,7 @@ const projects: ProjectCard[] = [
     description:
       "E-commerce de helados, con filtros por nombre, categoría y orden por precio. Registro y personalización de usuarios, favoritos, compras seguras con Mercado Pago, reviews de su experiencia en la plataforma y correo electrónico de comprobantes de pagos.",
     tags: ["React", "Node.js", "MongoDb"],
-    image: "../../dist/assets/heladitos-app.webp",
+    image: heladitosApp,
     url: "https://github.com/HeladitoApp/pf-Heladito",
   },
 ];
