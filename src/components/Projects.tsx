@@ -30,7 +30,7 @@ const projects: ProjectCard[] = [
       "BOOSTUP es una plataforma de financiamiento colectivo que conecta proyectos StartUp emergentes con inversores interesados en innovación y sostenibilidad.",
     tags: ["React", "Next.js", "Node.js", "MongoDb"],
     image: boostup,
-    url: "https://github.com/No-Country-simulation/c21-21-m-node-react",
+    url: "https://boostup-testing-gilt.vercel.app/",
   },
   {
     title: "AlPaso App",
@@ -46,7 +46,7 @@ const projects: ProjectCard[] = [
       "E-commerce de helados, con filtros por nombre, categoría y orden por precio. Registro y personalización de usuarios, favoritos, compras seguras con Mercado Pago, reviews de su experiencia en la plataforma y correo electrónico de comprobantes de pagos.",
     tags: ["React", "Node.js", "MongoDb"],
     image: heladitosApp,
-    url: "https://github.com/HeladitoApp/pf-Heladito",
+    url: "https://heladitos-app.vercel.app/",
   },
 ];
 
