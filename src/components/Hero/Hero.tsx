@@ -16,7 +16,7 @@ import ProfileImage from "./ProfileImage";
 import { useState } from "react";
 
 const roles = [
-  "Desarrollador Web Back-End",
+  "Desarrollador Back-End",
   "Arquitecto de APIs",
   "Automatizador de Procesos",
   "Optimizador de Base de Datos",

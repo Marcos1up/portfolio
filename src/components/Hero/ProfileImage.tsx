@@ -10,25 +10,15 @@ const ProfileImage = () => {
       maxW={{ base: "280px", sm: "320px", md: "400px", lg: "500px" }}
       w="full"
     >
-      {/* Decorative Leaves */}
-      <Box
-        position="absolute"
-        right="-20%"
-        top="-10%"
-        w="140%"
-        h="120%"
-        bgGradient="linear(to-br, brand.primary, brand.secondary)"
-        opacity={0.1}
-        transform="rotate(-12deg)"
-        borderRadius="full"
-        filter="blur(60px)"
-      />
-
       <Image
         src={profilePic}
         alt="Marcos Soria"
         borderRadius="2xl"
         objectFit="cover"
+        filter="drop-shadow(1px 1px 20px #141414)"
+        /* style={{
+          WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent)",
+        }} */
         w="full"
         h={{ base: "400px", md: "500px", lg: "600px" }}
         position="relative"
