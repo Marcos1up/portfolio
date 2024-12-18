@@ -50,16 +50,16 @@ const skillsData: Skill[] = [
     category: "Database",
     icon: Database,
     skills: [
-      { name: "PostgreSQL", level: 78, experience: "2 Años" },
+      { name: "PostgreSQL", level: 63, experience: "2 Años" },
       { name: "MongoDB", level: 88, experience: "2 Años" },
-      { name: "MySQL", level: 45, experience: "1 Año" },
+      { name: "MySQL", level: 82, experience: "1 Año" },
     ],
   },
   {
     category: "DevOps",
     icon: Terminal,
     skills: [
-      { name: "Docker", level: 85, experience: "2 Años" },
+      { name: "Docker", level: 55, experience: "2 Años" },
       { name: "AWS", level: 60, experience: "1 Año" },
       { name: "CI/CD", level: 72, experience: "1 Año" },
     ],
@@ -77,9 +77,9 @@ const skillsData: Skill[] = [
     category: "Tools and Others",
     icon: Brain,
     skills: [
-      { name: "Git", level: 85, experience: "2 Años" },
-      { name: "Insomnia/Postman", level: 75, experience: "2 Años" },
-      { name: "Jira", level: 52, experience: "1 Año" },
+      { name: "Git", level: 89, experience: "2 Años" },
+      { name: "Insomnia/Postman", level: 81, experience: "2 Años" },
+      { name: "Jira", level: 62, experience: "1 Año" },
     ],
   },
 ];

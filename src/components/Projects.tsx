@@ -11,8 +11,12 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { Code, ExternalLink } from "lucide-react";
-import image404 from "../assets/image-404.webp";
+
+// import image404 from "../assets/image-404.webp";
+
+import checkpointZone from "../assets/checkpoint-zone.webp";
 import boostup from "../assets/boostup.webp";
+import alPasoApp from "../assets/alPasoApp.webp";
 import heladitosApp from "../assets/heladitos-app.webp";
 
 interface ProjectCard {
@@ -25,6 +29,15 @@ interface ProjectCard {
 }
 
 const projects: ProjectCard[] = [
+  {
+    title: "Checkpoint Zone",
+    description:
+      "Checkpoint Zone es un ecommerce de videojuegos con registro seguro, catálogo completo, filtros avanzados, carrito optimizado, pagos con PayPal, gestión de pedidos y soporte.",
+    tags: ["React", "Vite.js", "Node.js", "MySql"],
+    stack: "Backend",
+    image: checkpointZone,
+    url: "https://checkpoint-zone.vercel.app/",
+  },
   {
     title: "Boostup",
     description:
@@ -40,8 +53,8 @@ const projects: ProjectCard[] = [
       "Desarrollo freelancer de una página de catálogo menú, para un negocio local de comida rápida. Muestra productos destacados, ofertas, favoritos, si se encuentra abierto o cerrado y un mapa de la dirección del local.",
     tags: ["React", "Next.js", "Tailwind"],
     stack: "Frontend",
-    image: image404,
-    url: "https://github.com/Marcos1up/AlPaso-App",
+    image: alPasoApp,
+    url: "https://al-pasoapp.vercel.app/",
   },
   {
     title: "Heladitos App",
