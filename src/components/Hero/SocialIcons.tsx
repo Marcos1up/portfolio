@@ -1,9 +1,10 @@
 import { Box, VStack } from "@chakra-ui/react";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter } from "lucide-react";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/marcos-soria-dev/" },
   { icon: Github, href: "https://github.com/Marcos1up" },
+  { icon: Twitter, href: "https://x.com/Marcos_1Up" },
   { icon: Instagram, href: "https://www.instagram.com/marcos.1up/" },
 ];
 

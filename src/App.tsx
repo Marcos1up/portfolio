@@ -6,7 +6,6 @@ import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-// import Stats from "./components/Stats";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +34,7 @@ function App() {
           <Header />
           <Box pt={20}>
             <Hero />
-            {/* <Stats /> */}
+            {/* <AboutMe /> */}
             <Skills />
             <Projects />
             <Footer />

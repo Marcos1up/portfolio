@@ -11,61 +11,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { Code, ExternalLink } from "lucide-react";
-
-// import image404 from "../assets/image-404.webp";
-
-import checkpointZone from "../assets/checkpoint-zone.webp";
-import boostup from "../assets/boostup.webp";
-import alPasoApp from "../assets/alPasoApp.webp";
-import heladitosApp from "../assets/heladitos-app.webp";
-
-interface ProjectCard {
-  title: string;
-  description: string;
-  tags: string[];
-  stack: string;
-  image: string;
-  url: string;
-}
-
-const projects: ProjectCard[] = [
-  {
-    title: "Checkpoint Zone",
-    description:
-      "Checkpoint Zone es un ecommerce de videojuegos con registro seguro, catálogo completo, filtros avanzados, carrito optimizado, pagos con PayPal, gestión de pedidos y soporte.",
-    tags: ["React", "Vite.js", "Node.js", "MySql"],
-    stack: "Backend",
-    image: checkpointZone,
-    url: "https://checkpoint-zone.vercel.app/",
-  },
-  {
-    title: "Boostup",
-    description:
-      "BOOSTUP es una plataforma de financiamiento colectivo que conecta proyectos StartUp emergentes con inversores interesados en innovación y sostenibilidad.",
-    tags: ["React", "Next.js", "Node.js", "MongoDb"],
-    stack: "Backend",
-    image: boostup,
-    url: "https://boostup-testing-gilt.vercel.app/",
-  },
-  {
-    title: "AlPaso App",
-    description:
-      "Desarrollo freelancer de una página de catálogo menú, para un negocio local de comida rápida. Muestra productos destacados, ofertas, favoritos, si se encuentra abierto o cerrado y un mapa de la dirección del local.",
-    tags: ["React", "Next.js", "Tailwind"],
-    stack: "Frontend",
-    image: alPasoApp,
-    url: "https://al-pasoapp.vercel.app/",
-  },
-  {
-    title: "Heladitos App",
-    description:
-      "E-commerce de helados, con filtros por nombre, categoría y orden por precio. Registro y personalización de usuarios, favoritos, compras seguras con Mercado Pago, reviews de su experiencia en la plataforma y correo electrónico de comprobantes de pagos.",
-    tags: ["React", "Node.js", "MongoDb"],
-    stack: "Backend",
-    image: heladitosApp,
-    url: "https://heladitos-app.vercel.app/",
-  },
-];
+import { projects } from "../data/projectsData";
+import type { ProjectCard } from "../data/projectsData";
 
 const ProjectCard = ({ project }: { project: ProjectCard }) => {
   return (
@@ -132,19 +79,31 @@ const ProjectCard = ({ project }: { project: ProjectCard }) => {
           ))}
         </HStack>
 
-        <Link href={project.url} isExternal _hover={{ textDecoration: "none" }}>
-          <Button
-            variant="ghost"
-            size="sm"
-            color="brand.lightGrey"
-            _hover={{ bg: "brand.black", color: "brand.beaver" }}
-            rightIcon={<ExternalLink size={16} />}
-            mt={2}
-            w="full"
-          >
-            Ver proyecto
-          </Button>
-        </Link>
+        <HStack mt={4} spacing={4}>
+          <Link href={project.url} isExternal flex={1}>
+            <Button
+              width="100%"
+              leftIcon={<ExternalLink size={20} />}
+              color="brand.lightGrey"
+              _hover={{ bg: "brand.black", color: "brand.beaver" }}
+              variant="ghost"
+            >
+              Demo
+            </Button>
+          </Link>
+          
+          <Link href={project.github} isExternal flex={1}>
+            <Button
+              width="100%"
+              leftIcon={<Code size={20} />}
+              color="brand.lightGrey"
+              _hover={{ bg: "brand.black", color: "brand.beaver" }}
+              variant="ghost"
+            >
+              GitHub
+            </Button>
+          </Link>
+        </HStack>
       </VStack>
     </Box>
   );

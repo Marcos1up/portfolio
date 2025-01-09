@@ -6,7 +6,7 @@ import {
   IconButton,
   Flex,
 } from "@chakra-ui/react";
-import { Github, Linkedin, Instagram, Sparkles } from "lucide-react";
+import { Github, Linkedin, Instagram, Sparkles, Twitter } from "lucide-react";
 
 const socialLinks = [
   {
@@ -15,6 +15,11 @@ const socialLinks = [
     label: "LinkedIn",
   },
   { icon: Github, href: "https://github.com/Marcos1up", label: "GitHub" },
+  {
+    icon: Twitter,
+    href: "https://x.com/Marcos_1Up",
+    label: "Twitter",
+  },
   {
     icon: Instagram,
     href: "https://www.instagram.com/marcos.1up/",
@@ -66,7 +71,7 @@ const Footer = () => {
             flexWrap="wrap"
             justify="center"
           >
-            <Text>Copyright ©</Text>
+            <Text>Copyright </Text>
             <Text>|</Text>
             <Text>Coded with</Text>
             <Box
