@@ -21,7 +21,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const toast = useToast();
-  const email = "marcos@example.com";
+  const email = "itsmarcos.1up@gmail.com";
 
   useEffect(() => {
     const handleScroll = () => {
