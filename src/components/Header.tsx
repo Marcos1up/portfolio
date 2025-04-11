@@ -12,16 +12,19 @@ import {
   DrawerContent,
   VStack,
   useToast,
-} from "@chakra-ui/react";
-import { Code2, Github, Linkedin, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+  Image,
+} from '@chakra-ui/react';
+import { Code2, Github, Linkedin, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
+import logoImg from '../assets/logo-Img.webp';
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scrolled, setScrolled] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const toast = useToast();
-  const email = "marcos@example.com";
+  const email = 'itsmarcos.1up@gmail.com';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,20 +32,20 @@ const Header = () => {
       setScrolled(offset > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
     setIsCopied(true);
     toast({
-      title: "Correo copiado",
-      description: "El correo ha sido copiado al portapapeles.",
-      status: "success",
+      title: 'Correo copiado',
+      description: 'El correo ha sido copiado al portapapeles.',
+      status: 'success',
       duration: 3000,
       isClosable: true,
-      position: "top",
+      position: 'top',
     });
 
     setTimeout(() => setIsCopied(false), 10000);
@@ -51,7 +54,7 @@ const Header = () => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
       onClose();
     }
   };
@@ -64,11 +67,11 @@ const Header = () => {
       left={0}
       right={0}
       zIndex={1000}
-      transform={`translateY(${scrolled ? "0" : "0"})`}
+      transform={`translateY(${scrolled ? '0' : '0'})`}
       transition="all 0.3s"
-      bg={scrolled ? "rgba(31, 31, 31, 0.80)" : "transparent"}
-      backdropFilter={scrolled ? "blur(10px)" : "none"}
-      borderBottom={scrolled ? "1px solid" : "none"}
+      bg={scrolled ? 'rgba(31, 31, 31, 0.80)' : 'transparent'}
+      backdropFilter={scrolled ? 'blur(10px)' : 'none'}
+      borderBottom={scrolled ? '1px solid' : 'none'}
       borderColor="whiteAlpha.100"
     >
       <Flex
@@ -80,34 +83,35 @@ const Header = () => {
         px={8}
       >
         <Flex align="center" gap={2}>
-          <Code2 size={24} />
+          {/* <Code2 size={24} /> */}
+          <Image src={logoImg} alt="Marcos Soria" w="50px" objectFit="cover" />
           <Heading size="md" color="brand.white">
             Marcos Soria
           </Heading>
         </Flex>
 
         {/* Desktop Navigation */}
-        <Flex gap={4} display={{ base: "none", md: "flex" }}>
+        <Flex gap={4} display={{ base: 'none', md: 'flex' }}>
           <Button
             variant="ghost"
-            onClick={() => scrollTo("home")}
-            _hover={{ bg: "brand.black", color: "brand.beaver" }}
+            onClick={() => scrollTo('home')}
+            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
             color="brand.lightGrey"
           >
             Inicio
           </Button>
           <Button
             variant="ghost"
-            onClick={() => scrollTo("skills")}
-            _hover={{ bg: "brand.black", color: "brand.beaver" }}
+            onClick={() => scrollTo('skills')}
+            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
             color="brand.lightGrey"
           >
             Habilidades
           </Button>
           <Button
             variant="ghost"
-            onClick={() => scrollTo("projects")}
-            _hover={{ bg: "brand.black", color: "brand.beaver" }}
+            onClick={() => scrollTo('projects')}
+            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
             color="brand.lightGrey"
           >
             Proyectos
@@ -115,11 +119,11 @@ const Header = () => {
           <Button
             onClick={handleCopyEmail}
             variant="solid"
-            bg={isCopied ? "green.500" : "brand.beaver"}
-            color={isCopied ? "white" : "brand.jet"}
-            _hover={isCopied ? {} : { bg: "brand.black" }}
+            bg={isCopied ? 'green.500' : 'brand.beaver'}
+            color={isCopied ? 'white' : 'brand.jet'}
+            _hover={isCopied ? {} : { bg: 'brand.black' }}
           >
-            {isCopied ? "Correo Copiado" : "Contáctame"}
+            {isCopied ? 'Correo Copiado' : 'Contáctame'}
           </Button>
         </Flex>
 
@@ -128,9 +132,9 @@ const Header = () => {
           aria-label="Open menu"
           icon={<Menu size={24} />}
           variant="ghost"
-          display={{ base: "flex", md: "none" }}
+          display={{ base: 'flex', md: 'none' }}
           onClick={onOpen}
-          _hover={{ bg: "brand.black" }}
+          _hover={{ bg: 'brand.black' }}
           color="brand.lightGrey"
         />
 
@@ -151,7 +155,7 @@ const Header = () => {
                   icon={<X size={24} />}
                   variant="ghost"
                   onClick={onClose}
-                  _hover={{ bg: "brand.black" }}
+                  _hover={{ bg: 'brand.black' }}
                   color="brand.lightGrey"
                 />
               </Flex>
@@ -162,8 +166,8 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="lg"
-                  onClick={() => scrollTo("home")}
-                  _hover={{ bg: "brand.black", color: "brand.beaver" }}
+                  onClick={() => scrollTo('home')}
+                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
                   color="brand.lightGrey"
                 >
                   Inicio
@@ -171,8 +175,8 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="lg"
-                  onClick={() => scrollTo("skills")}
-                  _hover={{ bg: "brand.black", color: "brand.beaver" }}
+                  onClick={() => scrollTo('skills')}
+                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
                   color="brand.lightGrey"
                 >
                   Habilidades
@@ -180,8 +184,8 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="lg"
-                  onClick={() => scrollTo("projects")}
-                  _hover={{ bg: "brand.black", color: "brand.beaver" }}
+                  onClick={() => scrollTo('projects')}
+                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
                   color="brand.lightGrey"
                 >
                   Proyectos
@@ -193,7 +197,7 @@ const Header = () => {
                   variant="ghost"
                   size="lg"
                   leftIcon={<Github size={20} />}
-                  _hover={{ bg: "brand.black", color: "brand.beaver" }}
+                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
                   color="brand.lightGrey"
                 >
                   GitHub
@@ -205,7 +209,7 @@ const Header = () => {
                   variant="ghost"
                   size="lg"
                   leftIcon={<Linkedin size={20} />}
-                  _hover={{ bg: "brand.black", color: "brand.beaver" }}
+                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
                   color="brand.lightGrey"
                 >
                   LinkedIn
@@ -214,11 +218,11 @@ const Header = () => {
                   onClick={handleCopyEmail}
                   variant="solid"
                   size="lg"
-                  bg={isCopied ? "green.500" : "brand.beaver"}
-                  color={isCopied ? "white" : "brand.jet"}
-                  _hover={isCopied ? {} : { bg: "brand.black" }}
+                  bg={isCopied ? 'green.500' : 'brand.beaver'}
+                  color={isCopied ? 'white' : 'brand.jet'}
+                  _hover={isCopied ? {} : { bg: 'brand.black' }}
                 >
-                  {isCopied ? "Correo Copiado" : "Contáctame"}
+                  {isCopied ? 'Correo Copiado' : 'Contáctame'}
                 </Button>
               </VStack>
             </DrawerBody>
