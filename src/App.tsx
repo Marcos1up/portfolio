@@ -1,18 +1,18 @@
-import { ChakraProvider, Box, Spinner } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import theme from "./theme";
-import Header from "./components/Header";
-import Hero from "./components/Hero/Hero";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
+import theme from './theme';
+import Header from './components/Header';
+import Hero from './components/Hero/Hero';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   //loader spinner
   useEffect(() => {
-    const loadTimeout = setTimeout(() => setIsLoading(false), 1000);
+    const loadTimeout = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(loadTimeout);
   }, []);
 
@@ -27,7 +27,7 @@ function App() {
           w="100vw" //responsive
           bg="brand.jet"
         >
-          <Spinner size={{ base: "lg", md: "xl" }} color="brand.beaver" />
+          <Spinner size={{ base: 'lg', md: 'xl' }} color="brand.beaver" />
         </Box>
       ) : (
         <>
