@@ -1,6 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
 
-// import profile from '../../assets/profile.webp';
 import profilePic from '../../assets/me-profile.webp';
 
 const ProfileImage = () => {
