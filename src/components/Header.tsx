@@ -69,7 +69,7 @@ const Header = () => {
       zIndex={1000}
       transform={`translateY(${scrolled ? '0' : '0'})`}
       transition="all 0.3s"
-      bg={scrolled ? 'rgba(31, 31, 31, 0.80)' : 'transparent'}
+      bg={'rgba(31, 31, 31, 0.80)'}
       backdropFilter={scrolled ? 'blur(10px)' : 'none'}
       borderBottom={scrolled ? '1px solid' : 'none'}
       borderColor="whiteAlpha.100"

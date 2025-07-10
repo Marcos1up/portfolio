@@ -8,25 +8,25 @@ import {
   HStack,
   useClipboard,
   useToast,
-} from "@chakra-ui/react";
-import { Download, Mail, Check } from "lucide-react";
-import SocialIcons from "./SocialIcons";
-import TypeWriter from "./TypeWriter";
-import ProfileImage from "./ProfileImage";
-import { useState } from "react";
+} from '@chakra-ui/react';
+import { Download, Mail, Check } from 'lucide-react';
+import SocialIcons from './SocialIcons';
+import TypeWriter from './TypeWriter';
+import ProfileImage from './ProfileImage';
+import { useState } from 'react';
 
 const roles = [
-  "Desarrollador Back-End",
-  "Arquitecto de APIs",
-  "Automatizador de Procesos",
-  "Optimizador de Base de Datos",
-  "Desarrollador de Microservicios",
-  "Codeador creativo",
+  'Desarrollador Back-End',
+  'Arquitecto de APIs',
+  'Automatizador de Procesos',
+  'Optimizador de Base de Datos',
+  'Desarrollador de Microservicios',
+  'Codeador creativo',
 ];
 
 const cvDownload =
-  "https://drive.google.com/file/d/1ja3vA5y3f-aFn1S8t1e8qvNEqDZqFTXq/view";
-const email = "itsmarcos.1up@gmail.com";
+  'https://drive.google.com/file/d/1ja3vA5y3f-aFn1S8t1e8qvNEqDZqFTXq/view';
+const email = 'itsmarcos.1up@gmail.com';
 
 const Hero = () => {
   const { onCopy } = useClipboard(email);
@@ -37,12 +37,12 @@ const Hero = () => {
     onCopy();
     setIsCopied(true);
     toast({
-      title: "Correo copiado",
-      description: "El correo ha sido copiado al portapapeles.",
-      status: "success",
+      title: 'Correo copiado',
+      description: 'El correo ha sido copiado al portapapeles.',
+      status: 'success',
       duration: 3000,
       isClosable: true,
-      position: "top",
+      position: 'top',
     });
 
     setTimeout(() => setIsCopied(false), 10000);
@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <Box
       id="home"
-      py={{ base: 12, md: 15, lg: 20 }}
+      py={{ base: '100px', md: '100px', lg: 20 }}
       px={{ base: 4, md: 8 }}
       bg="brand.jet"
       position="relative"
@@ -72,7 +72,7 @@ const Hero = () => {
       <SocialIcons />
 
       <Flex
-        direction={{ base: "column", lg: "row" }}
+        direction={{ base: 'column', lg: 'row' }}
         align="center"
         justify="space-between"
         maxW="7xl"
@@ -80,12 +80,12 @@ const Hero = () => {
         gap={{ base: 8, md: 12, lg: 20 }}
       >
         <VStack
-          align={{ base: "center", lg: "start" }}
-          textAlign={{ base: "center", lg: "left" }}
+          align={{ base: 'center', lg: 'start' }}
+          textAlign={{ base: 'center', lg: 'left' }}
           flex={1}
         >
           <Text
-            fontSize={{ base: "lg", md: "xl" }}
+            fontSize={{ base: 'lg', md: 'xl' }}
             color="brand.beaver"
             fontFamily="'JetBrains Mono', monospace"
           >
@@ -93,7 +93,7 @@ const Hero = () => {
           </Text>
 
           <Heading
-            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
             color="brand.white"
             lineHeight="1.2"
             fontWeight="bold"
@@ -104,7 +104,7 @@ const Hero = () => {
           <TypeWriter roles={roles} />
 
           <Text
-            fontSize={{ base: "md", md: "lg" }}
+            fontSize={{ base: 'md', md: 'lg' }}
             color="brand.lightGrey"
             maxW="xl"
             px={{ base: 4, lg: 0 }}
@@ -120,11 +120,11 @@ const Hero = () => {
               as="a"
               href={cvDownload}
               target="_blank"
-              size={{ base: "md", md: "lg" }}
+              size={{ base: 'md', md: 'lg' }}
               variant="solid"
               bg="brand.beaver"
               color="brand.jet"
-              _hover={{ bg: "brand.black" }}
+              _hover={{ bg: 'brand.black' }}
               leftIcon={<Download size={20} />}
               flex="1"
               px={{ base: 6, md: 8 }}
@@ -133,20 +133,20 @@ const Hero = () => {
             </Button>
             <Button
               onClick={handleCopyEmail}
-              size={{ base: "md", md: "lg" }}
+              size={{ base: 'md', md: 'lg' }}
               variant="ghost"
-              color={isCopied ? "green.500" : "brand.lightGrey"}
-              bg={isCopied ? "green.100" : "transparent"}
+              color={isCopied ? 'green.500' : 'brand.lightGrey'}
+              bg={isCopied ? 'green.100' : 'transparent'}
               _hover={
                 isCopied
-                  ? { bg: "green.100", color: "green.500" }
-                  : { bg: "brand.black", color: "brand.beaver" }
+                  ? { bg: 'green.100', color: 'green.500' }
+                  : { bg: 'brand.black', color: 'brand.beaver' }
               }
               leftIcon={isCopied ? <Check size={20} /> : <Mail size={20} />}
               flex="1"
               px={{ base: 6, md: 8 }}
             >
-              {isCopied ? "Copiado" : "EMAIL"}
+              {isCopied ? 'Copiado' : 'EMAIL'}
             </Button>
           </HStack>
         </VStack>

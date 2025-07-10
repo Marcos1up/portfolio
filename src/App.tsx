@@ -32,7 +32,7 @@ function App() {
       ) : (
         <>
           <Header />
-          <Box pt={20}>
+          <Box>
             <Hero />
             {/* <AboutMe /> */}
             <Skills />

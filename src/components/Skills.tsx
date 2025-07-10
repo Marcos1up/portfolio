@@ -7,8 +7,8 @@ import {
   Badge,
   HStack,
   Icon,
-} from "@chakra-ui/react";
-import { Skill, skillsData } from "../data/skillsData";
+} from '@chakra-ui/react';
+import { Skill, skillsData } from '../data/skillsData';
 /* import {
   Terminal,
   Database,
@@ -27,9 +27,9 @@ const SkillCard = ({ category, icon, skills }: Skill) => {
       border="1px solid"
       borderColor="brand.eerieBlack"
       _hover={{
-        borderColor: "brand.beaver",
-        transform: "translateY(-2px)",
-        transition: "all 0.2s",
+        borderColor: 'brand.beaver',
+        transform: 'translateY(-2px)',
+        transition: 'all 0.2s',
       }}
     >
       <VStack align="stretch" spacing={4}>
@@ -70,7 +70,7 @@ const Skills = () => {
   return (
     <Box id="skills" py={20} px={8} bg="brand.eerieBlack">
       <VStack spacing={12} maxW="7xl" mx="auto">
-        <VStack spacing={4} textAlign="center">
+        <VStack spacing={4} textAlign="center" pt="1rem">
           <Badge
             color="brand.white"
             bg="brand.beaver"

@@ -71,7 +71,7 @@ export const projects: ProjectCard[] = [
   {
     title: 'Custom-Logger',
     description:
-      "Un logger personalizado y 'profesional' para NestJS que utiliza Winston y rotación diaria de archivos, configurado para días especificos por orden de importancia, usando 'winston-daily-rotate-file'.",
+      "Un logger personalizado y 'profesional' para NestJS que utiliza Winston y rotación diaria de archivos ('winston-daily-rotate-file'), configurado para días especificos por orden de importancia.",
     tags: ['Node.js', 'NestJS', 'Winston'],
     stack: 'Backend',
     image: customLogger,

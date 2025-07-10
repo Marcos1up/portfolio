@@ -9,10 +9,10 @@ import {
   Image,
   AspectRatio,
   Link,
-} from "@chakra-ui/react";
-import { Code, ExternalLink } from "lucide-react";
-import { projects } from "../data/projectsData";
-import type { ProjectCard } from "../data/projectsData";
+} from '@chakra-ui/react';
+import { Code, ExternalLink } from 'lucide-react';
+import { projects } from '../data/projectsData';
+import type { ProjectCard } from '../data/projectsData';
 
 const ProjectCard = ({ project }: { project: ProjectCard }) => {
   return (
@@ -23,9 +23,9 @@ const ProjectCard = ({ project }: { project: ProjectCard }) => {
       borderColor="brand.jet"
       overflow="hidden"
       _hover={{
-        borderColor: "brand.beaver",
-        transform: "translateY(-2px)",
-        transition: "all 0.2s",
+        borderColor: 'brand.beaver',
+        transform: 'translateY(-2px)',
+        transition: 'all 0.2s',
       }}
     >
       <AspectRatio ratio={16 / 9}>
@@ -36,7 +36,7 @@ const ProjectCard = ({ project }: { project: ProjectCard }) => {
           w="full"
           transition="transform 0.2s"
           _hover={{
-            transform: "scale(1.05)",
+            transform: 'scale(1.05)',
           }}
         />
       </AspectRatio>
@@ -85,19 +85,19 @@ const ProjectCard = ({ project }: { project: ProjectCard }) => {
               width="100%"
               leftIcon={<ExternalLink size={20} />}
               color="brand.lightGrey"
-              _hover={{ bg: "brand.black", color: "brand.beaver" }}
+              _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
               variant="ghost"
             >
               Demo
             </Button>
           </Link>
-          
+
           <Link href={project.github} isExternal flex={1}>
             <Button
               width="100%"
               leftIcon={<Code size={20} />}
               color="brand.lightGrey"
-              _hover={{ bg: "brand.black", color: "brand.beaver" }}
+              _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
               variant="ghost"
             >
               GitHub
@@ -113,7 +113,7 @@ const Projects = () => {
   return (
     <Box id="projects" py={20} px={8} bg="brand.jet">
       <VStack spacing={12} maxW="7xl" mx="auto">
-        <VStack spacing={4} textAlign="center">
+        <VStack spacing={4} textAlign="center" pt="1rem">
           <Badge
             color="brand.white"
             bg="brand.beaver"
@@ -142,13 +142,13 @@ const Projects = () => {
         <Link
           href="https://github.com/Marcos1up?tab=repositories"
           isExternal
-          _hover={{ textDecoration: "none" }}
+          _hover={{ textDecoration: 'none' }}
         >
           <Button
             variant="ghost"
             size="lg"
             color="brand.lightGrey"
-            _hover={{ bg: "brand.black", color: "brand.beaver" }}
+            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
             rightIcon={<Code size={20} />}
           >
             Ver todos los proyectos
