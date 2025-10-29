@@ -20,11 +20,6 @@ const socialLinks = [
     href: 'https://x.com/Marcos_1Up',
     label: 'Twitter',
   },
-  {
-    icon: Instagram,
-    href: 'https://www.instagram.com/marcos.1up/',
-    label: 'Instagram',
-  },
 ];
 
 const Footer = () => {
