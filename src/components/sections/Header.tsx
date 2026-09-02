@@ -11,20 +11,20 @@ import {
   DrawerOverlay,
   DrawerContent,
   VStack,
-  useToast,
   Image,
 } from '@chakra-ui/react';
 import { Code2, Github, Linkedin, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import logoImg from '../assets/logo-Img.webp';
+import logoImg from '@/assets/logo.webp';
+import { GITHUB_URL, LINKEDIN_URL } from '@/constants/profile';
+import { navLinks } from '@/constants/navLinks';
+import { useCopyEmail } from '@/hooks/useCopyEmail';
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scrolled, setScrolled] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
-  const toast = useToast();
-  const email = 'itsmarcos.1up@gmail.com';
+  const { isCopied, handleCopyEmail } = useCopyEmail();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,21 +35,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setIsCopied(true);
-    toast({
-      title: 'Correo copiado',
-      description: 'El correo ha sido copiado al portapapeles.',
-      status: 'success',
-      duration: 3000,
-      isClosable: true,
-      position: 'top',
-    });
-
-    setTimeout(() => setIsCopied(false), 10000);
-  };
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -83,7 +68,6 @@ const Header = () => {
         px={8}
       >
         <Flex align="center" gap={2}>
-          {/* <Code2 size={24} /> */}
           <Image src={logoImg} alt="Marcos Soria" w="50px" objectFit="cover" />
           <Heading size="md" color="brand.white">
             Marcos Soria
@@ -92,30 +76,17 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <Flex gap={4} display={{ base: 'none', md: 'flex' }}>
-          <Button
-            variant="ghost"
-            onClick={() => scrollTo('home')}
-            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-            color="brand.lightGrey"
-          >
-            Inicio
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => scrollTo('skills')}
-            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-            color="brand.lightGrey"
-          >
-            Habilidades
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => scrollTo('projects')}
-            _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-            color="brand.lightGrey"
-          >
-            Proyectos
-          </Button>
+          {navLinks.map(({ id, label }) => (
+            <Button
+              key={id}
+              variant="ghost"
+              onClick={() => scrollTo(id)}
+              _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
+              color="brand.lightGrey"
+            >
+              {label}
+            </Button>
+          ))}
           <Button
             onClick={handleCopyEmail}
             variant="solid"
@@ -163,36 +134,21 @@ const Header = () => {
 
             <DrawerBody>
               <VStack spacing={4} align="stretch" mt={8}>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  onClick={() => scrollTo('home')}
-                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-                  color="brand.lightGrey"
-                >
-                  Inicio
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  onClick={() => scrollTo('skills')}
-                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-                  color="brand.lightGrey"
-                >
-                  Habilidades
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  onClick={() => scrollTo('projects')}
-                  _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
-                  color="brand.lightGrey"
-                >
-                  Proyectos
-                </Button>
+                {navLinks.map(({ id, label }) => (
+                  <Button
+                    key={id}
+                    variant="ghost"
+                    size="lg"
+                    onClick={() => scrollTo(id)}
+                    _hover={{ bg: 'brand.black', color: 'brand.beaver' }}
+                    color="brand.lightGrey"
+                  >
+                    {label}
+                  </Button>
+                ))}
                 <Button
                   as="a"
-                  href="https://github.com/Marcos1up"
+                  href={GITHUB_URL}
                   target="_blank"
                   variant="ghost"
                   size="lg"
@@ -204,7 +160,7 @@ const Header = () => {
                 </Button>
                 <Button
                   as="a"
-                  href="https://www.linkedin.com/in/marcos-soria-dev/"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   variant="ghost"
                   size="lg"

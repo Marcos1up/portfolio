@@ -6,14 +6,13 @@ import {
   Button,
   VStack,
   HStack,
-  useClipboard,
-  useToast,
 } from '@chakra-ui/react';
 import { Download, Mail, Check } from 'lucide-react';
 import SocialIcons from './SocialIcons';
 import TypeWriter from './TypeWriter';
 import ProfileImage from './ProfileImage';
-import { useState } from 'react';
+import { CV_URL } from '@/constants/profile';
+import { useCopyEmail } from '@/hooks/useCopyEmail';
 
 const roles = [
   'Desarrollador Back-End',
@@ -24,29 +23,8 @@ const roles = [
   'Codeador creativo',
 ];
 
-const cvDownload =
-  'https://drive.google.com/file/d/1ja3vA5y3f-aFn1S8t1e8qvNEqDZqFTXq/view';
-const email = 'itsmarcos.1up@gmail.com';
-
 const Hero = () => {
-  const { onCopy } = useClipboard(email);
-  const [isCopied, setIsCopied] = useState(false);
-  const toast = useToast();
-
-  const handleCopyEmail = () => {
-    onCopy();
-    setIsCopied(true);
-    toast({
-      title: 'Correo copiado',
-      description: 'El correo ha sido copiado al portapapeles.',
-      status: 'success',
-      duration: 3000,
-      isClosable: true,
-      position: 'top',
-    });
-
-    setTimeout(() => setIsCopied(false), 10000);
-  };
+  const { isCopied, handleCopyEmail } = useCopyEmail();
 
   return (
     <Box
@@ -118,7 +96,7 @@ const Hero = () => {
           <HStack spacing={4} pt={{ base: 2, md: 4 }} w="75%">
             <Button
               as="a"
-              href={cvDownload}
+              href={CV_URL}
               target="_blank"
               size={{ base: 'md', md: 'lg' }}
               variant="solid"

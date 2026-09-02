@@ -1,11 +1,11 @@
 import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import theme from './theme';
-import Header from './components/Header';
-import Hero from './components/Hero/Hero';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
+import Header from '@/components/sections/Header';
+import Hero from '@/components/sections/Hero/Hero';
+import Skills from '@/components/sections/Skills';
+import Projects from '@/components/sections/Projects';
+import Footer from '@/components/sections/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +34,6 @@ function App() {
           <Header />
           <Box>
             <Hero />
-            {/* <AboutMe /> */}
             <Skills />
             <Projects />
             <Footer />

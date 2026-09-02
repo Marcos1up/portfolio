@@ -7,7 +7,7 @@ import heladitosApp from '../assets/heladitos-app.webp';
 import readmeSpawner from '../assets/readme-spawner.webp';
 import customLogger from '../assets/custom-logger.webp';
 
-export interface ProjectCard {
+export interface ProjectCardData {
   title: string;
   description: string;
   tags: string[];
@@ -17,7 +17,7 @@ export interface ProjectCard {
   github: string;
 }
 
-export const projects: ProjectCard[] = [
+export const projects: ProjectCardData[] = [
   {
     title: 'Checkpoint Zone',
     description:
