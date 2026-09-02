@@ -6,20 +6,13 @@ import {
   IconButton,
   Flex,
 } from '@chakra-ui/react';
-import { Github, Linkedin, Instagram, Sparkles, Twitter } from 'lucide-react';
+import { Github, Linkedin, Sparkles, Twitter } from 'lucide-react';
+import { GITHUB_URL, LINKEDIN_URL, TWITTER_URL } from '@/constants/profile';
 
 const socialLinks = [
-  {
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/marcos-soria-dev/',
-    label: 'LinkedIn',
-  },
-  { icon: Github, href: 'https://github.com/Marcos1up', label: 'GitHub' },
-  {
-    icon: Twitter,
-    href: 'https://x.com/Marcos_1Up',
-    label: 'Twitter',
-  },
+  { icon: Linkedin, href: LINKEDIN_URL, label: 'LinkedIn' },
+  { icon: Github, href: GITHUB_URL, label: 'GitHub' },
+  { icon: Twitter, href: TWITTER_URL, label: 'Twitter' },
 ];
 
 const Footer = () => {
