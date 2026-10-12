@@ -15,6 +15,10 @@ const colors = {
 
     eerieBlack: "#1F1F1F", //fondo oscuro de secciones y elementos
     jet: "#292929", //fondo claro de secciones
+
+    //alias semánticos de fondo de sección (mismos hex que jet/eerieBlack)
+    sectionEven: "#292929", //fondo de sección par (alias de jet)
+    sectionOdd: "#1F1F1F", //fondo de sección impar (alias de eerieBlack)
   },
 };
 
@@ -109,10 +113,27 @@ const components = {
   },
 };
 
+//transición compartida por las cards (SkillCard / ProjectCard)
+export const CARD_TRANSITION = "all 0.2s";
+
+//estilos de texto reutilizables en las secciones
+const textStyles = {
+  sectionTitle: {
+    fontSize: "2xl",
+    fontWeight: "bold",
+    color: "brand.white",
+  },
+  sectionSubtitle: {
+    color: "brand.lightGrey",
+    maxW: "2xl",
+  },
+};
+
 const theme = extendTheme({
   colors,
   fonts,
   styles,
+  textStyles,
   components,
 });
 
